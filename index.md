@@ -7,81 +7,46 @@
 #
 layout: page
 ---
-
-This is the demo and documentation for Oinam Jekyll Theme. The [Styleguide]({{ site.baseurl | prepend: site.url }}/styleguide/) has the demonstation of all content features and options you can use. I wrote [an article](https://brajeshwar.com/2021/brajeshwar.com-2021/) about how and why I built this Jekyll Theme.
-
-> The [source](https://github.com/oinam/oinam-jekyll) is hosted on Github and you can [download](https://github.com/oinam/oinam-jekyll/archive/refs/heads/main.zip) a zipped version of the source code.
+# Categorising and Predicting Most Valuable Business Traveller Category(s)
 
 ---
+## Executive Summary
+My business problem that I am solving is to find out which of the people represented in my data set fit into distinct categories, and what are the distinguishing features of those categories. I also want to use machine learning to predict how valuable a customer would be based on the value of one or more columns to be predicted based on the other columns values, and potentially therefore which columns/features contribute most to value.
 
-## Installation
+> ⁠How did you solve it
 
-There are three ways of using Oinam Jekyll Theme;
-
-1. Remote Theme
-2. Template
-3. Ruby Gem
-
-### Remote Theme
-
-Use `oinam-jekyll` as a [remote theme](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll) and you should be good to go. Add `remote_theme: oinam/oinam-jekyll` in the `_config.yml` file.
-
-This is the preferred option. You get updates as soon as a new feature is added or bugs are fixed and updated on Github. You also get the latest versions.
-
-### Template (Modify and Use)
-
-Either fork the [repository](https://github.com/oinam/oinam-jekyll) or [Use the Template](https://github.com/oinam/oinam-jekyll/generate) from the repository on Github.
-
-This option is suggested for Jekyll tinkerers and experts who are willing to update manually.
-
-### Ruby Gem
-
-The theme is also available as a [Ruby Gem](https://rubygems.org/gems/oinam-jekyll). This will be the least updated. Minor fixes and changes will <mark>NOT</mark> be reflected here quickly enough.
+> What did you find
 
 ---
-## Layouts
+## Introduction
+> which provides background and context for your problem, why you
+chose this research question and why it is a strong candidate for a data-driven
+solution
 
-1. `home` layout where you can have content blurbs on the top and the last few recent posts.
-2. `blog` layout that lists the titles of the posts along with the years as the headings.
-3. `page` layout for pages.
-4. `post` layout for posts.
+The background for this problem is 
 
-### Configuration
-
-The `_config.yml` has quite a few settings that are configurable. Removing the default Footer Credit and the Footer text are configurable. Choosing either Serif or Sans-Serif font-family, etc.
-
-### Color
-
-There are three basic color themes included -- `default`, [nord](https://www.nordtheme.com), and `vintage`. Treat them as samples for you to make your own. If you are tinkering with the code, you will find it as easy as just changing few color (HEX) values in the CSS. If you want to pick one of the three, pick a choice in `_config.yml`.
+I chose this research question because I believed that it was a question that could be answered using my dataset, but was detailed enough to be worthwhile applying machine learning to the problem. I am also personally invested in finding out the results of the analysis as the dataset is too dense to be analysed by hand
+There are very useful points for figuring out who is most likely to do lots of travelling, be prone to spending, how rich they potentially are, such as country of residence, age, remote working, frequency of business travel, level of education, job title and what they would be willing to spend on to upgrade travel.
+I am hoping that this would hypothetically allow someone to target the best people for upselling services or items.
+I believe this is a strong candidate for a data-driven solution because the overall subjective problem has been broken down into many smaller non-subjective problems with categorical answers.
+Also
+---
+## Methods
+> including a description of your data sources (at least two), a
+summary of any data cleaning you performed, and a description and justification of
+your selected method for analysis (use any models or methods you have learned
+about)
 
 ---
-## Content
-
-The [Styleguide]({{ site.baseurl | prepend: site.url }}/styleguide/) has examples and demos to treat images, videos, etc. with various layout and placement options.
-
----
-## Development
-
-Plain simple Jekyll and nothing else. Get Jekyll running on your local system and run this;
-
-`$ bundle exec jekyll serve`
-
-Or enable `drafts`, `future`, and serve it `incremental`;
-
-`$ bundle exec jekyll serve --drafts --future --incremental`
+## Results 
+> including descriptive statistics and graphs with axis labels and
+captions, your results, including graphs with axis labels and figure captions, and a
+discussion and interpretation of your results
 
 ---
-## Contributing
-
-You are welcome to contribute to the theme by sending in Pull Request with changes, edits, and fixes. Or, contribute by filing [Bugs and Issues](https://github.com/oinam/oinam-jekyll/issues).
-
-There is a `server` that runs a local development server for development;
-
-`$ ./server`
-
-it is just a script that runs;
-
-`$ bundle exec jekyll serve --config _config.yml,_config_dev.yml`
+## Conclusion
+> which summarises the work you have done and your recommendations
+for next steps
 
 ---
 ## License
