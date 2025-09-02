@@ -36,7 +36,57 @@ Also
 summary of any data cleaning you performed, and a description and justification of
 your selected method for analysis (use any models or methods you have learned
 about)
+For this problem I have selected one main dataset of information on business travellers in the form of a questionnaire on the subject audience (i.e. the travellers) and one secondary dataset in the form of a table that elaborates on the questions asked in the questionnaire, the datatypes of columns, and the value bounds of the columns, which I have manually created to aid in the programmatic data cleaning process.
+The main dataset was provided to me in the form of two Google Sheets files, one for the answers, and one for the questions and question key.
+The secondary dataset is another Google Sheets file, and if possible, I will include this file in an appendix at the bottom of the report.
+Using this file I have categorised the availible columns in the main dataset into four categories:
+- Green - These columns contain data that I want to keep in the dataset as is
+- Blue - These columns also contain data I want to keep in the dataset, but they will need some modification and cleaning, either programmatically or via Excel before analysis can take place.
+- Yellow - These columns contain data that may be relevant to the problem statement, but I am not certan they are necessary, such as
+    - The type of travel policy at the company the person works for
+    - if they are LGBTQ or transgender
+    - The size of their employer
+    - How long their employer has been in business
+    These may have some impact on the problem statement, but the company-related items can be covered by other columns, and although I think LGBTQ status is useful for diversity's sake, I suspect it won't be relevant enough
+- Red - These columns contain data that I either believe is not relevant to the problem statement, or contain data that if used might come with moral baggage. It also includes data that is neither numerical, binary, or categorical, such as large open-ended text fields
+    - GenderO has been removed, it is used to describe the person's gender if they chose 'Other'
+    - IndustryO has been removed, it is used to describe the person's field of work if they chose 'Other'
+    - Whether or not the person's employer has a formal travel policy has been removed, as it can be inferred from other columns
+    - Columns about if the person has taken the COVID vaccine or has special needs have been removed, as the vaccine is irrelevant, and I don't want to categorise travellers based on their disabilities or conditions
+    - Race has been removed for two reasons, 1) not every country is covered, so the data is incomplete, and 2) categorising people based on race is morally questionable
+    - The question about risk of hacking has been removed, as it refers to the person's trust in their employer's infrastructure, not in business travel
+    - Relationship has been removed, as we already have Marital Status covering it
+    - The question about who in the person's company has the most influence on the business travel programme has been removed, it is too removed from the problem statement
+    - Air travel safety in the last year has been ignored, 1) because we cannot influence it, and 2) because it will quickly be rendered out of date
+    - All questions about artificial intelligence (AI) have been removed. AI is a trending topic, but these AI questions relate to changes made by employers integrating AI and so are not relevent, as I am not that company(s)
 
+Various forms of data cleaning need to be performed. Most columns are not named after the question that they relate to.
+In binary columns, 0 means no and 1 means yes, but in some categorical columns, 0 is also used as a no value.
+If I do use the Sexual Orientation column, it currently has values between 2 and 5
+The Region, Education and Income columns are segregated by country, have inconsistent numbers of potential values, there are 3 Educations for Belgium(in different languages) and 2 for Canada.
+Education also has an inconsistent scale of options for different countries. I have chosen to rebox this into 4 options (<=16yr, <=18yr, degree, doctorate/postdoc)
+Income is using bands based on the currency of each country, which makes it impossible to directly compare
+Finally for this section, all the columns related to the United States are mislabelled.
+
+## TODO
+- rename relevant columns
+- remove red columns
+- rescale orientation
+- rebox education
+- merge duplicate educations
+- convert currency and rebox to reasonable boxes
+- lengthen explaination of machine learning choices
+- research alternative to k-nearest neighbours
+- convert text to past tense
+
+I plan to use two different types of machine learning on the dataset:
+1) a k-means clustering to group the participants in the questionnaire to be able to figure out if there are key groups, what common factors do they have, and how large the groups are
+2) a k-nearest neighbours analysis to be able to predict if a given new person would be willing to spend their own personal money on perks based on the information in the dataset
+
+I believe k-means clustering is suitable for this task because it is already well suited for categorising customers according to the information provided on the course. I also feel it will create useful graphics for non-technical people
+
+I think k-nearest neighbours can allow me to build a model to predict the proclivities of people based on existing data, but I may want to swap to another supervised predictive analysis method if I can find one that is more suited to the job, and allows me to see the important of factors in the logic.
+Support Vector Machines do allow the viewing of importance of factors, but it is not simple and I am unsure the model is much better than k-nearest neighbours.
 ---
 ## Results 
 > including descriptive statistics and graphs with axis labels and
