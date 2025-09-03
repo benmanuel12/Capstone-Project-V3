@@ -68,14 +68,18 @@ Education also has an inconsistent scale of options for different countries. I h
 Income is using bands based on the currency of each country, which makes it impossible to directly compare
 Finally for this section, all the columns related to the United States are mislabelled.
 
+To elaborate on the issue with Region, Education and Income, each topic contains 30 or so questions, one for each country in the questionnaire, and each question uses one column, with a number value to represent the answer given to that question. The problem with analysing this with Pandas is that it is impossible to analyse it as is, because '1' in Australia means "Western Australia', but in Belgium it means 'Antwerp' so they needed to be merged into one scale with one option for every possible regional option to avoid confusion.
+Also, the original layout meant that most columns like this were empty, as anyone living in Australia had to fill in the Australia column, but leave the other 30 blank. This heavily increased the number of null values in the dataset.
+The Education columns also had an inconsistent scale of options for different countries. I chose to rebox this into 4 options (<=16yr, <=18yr, degree, doctorate/postdoc) for straightforward comparison.
+Finally the Income columns do have clear bands for income, but each country's question has used their respective currency, so I had to create a new generally applicable set of bands and convert the currencies used to the same currency and convert the answers given to match the new bands
+
+After removing the aforementioned unwanted columns, merging and renaming columns as needed, and solving the data division problem explained in the last paragraph, it was then time to utilise the standard methods of data cleaning, to check for missing or invalid values, and deal with them as appropriate.
+
 ## TODO
-- rename relevant columns
-- remove red columns
-- rescale orientation
 - rebox education
-- merge duplicate educations
 - convert currency and rebox to reasonable boxes
 - lengthen explaination of machine learning choices
+- complete introduction
 - research alternative to k-nearest neighbours
 - convert text to past tense
 
